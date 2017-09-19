@@ -1,5 +1,6 @@
 package com.epicodus.myrestaurants.adapters;
 
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,17 +10,16 @@ import com.epicodus.myrestaurants.ui.RestaurantDetailFragment;
 
 import java.util.ArrayList;
 
-public class RestaurantPagerAdapter extends FragmentPagerAdapter{
-
+public class RestaurantPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Restaurant> mRestaurants;
 
-    public RestaurantPagerAdapter(FragmentManager fm, ArrayList<Restaurant> restaurants){
+    public RestaurantPagerAdapter(FragmentManager fm, ArrayList<Restaurant> restaurants) {
         super(fm);
         mRestaurants = restaurants;
     }
 
     @Override
-    public Fragment getItem(int position){
+    public Fragment getItem(int position) {
         return RestaurantDetailFragment.newInstance(mRestaurants.get(position));
     }
 
