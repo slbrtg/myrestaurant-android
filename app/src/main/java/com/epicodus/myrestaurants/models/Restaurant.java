@@ -17,6 +17,7 @@ public class Restaurant {
     double longitude;
     List<String> categories = new ArrayList<>();
     String pushId;
+    String index;
 
     // empty constructor needed by the Parceler library:
     public Restaurant() {}
@@ -33,6 +34,7 @@ public class Restaurant {
         this.latitude = latitude;
         this.longitude = longitude;
         this.categories = categories;
+        this.index = "not_specified";
     }
 
     public String getName() {
@@ -83,4 +85,14 @@ public class Restaurant {
     public void setPushId(String pushId) {
         this.pushId = pushId;
     }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
+
+
 }
