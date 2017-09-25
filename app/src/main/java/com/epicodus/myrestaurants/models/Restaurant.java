@@ -16,7 +16,7 @@ public class Restaurant {
     double latitude;
     double longitude;
     List<String> categories = new ArrayList<>();
-    private String pushId;
+    String pushId;
 
     // empty constructor needed by the Parceler library:
     public Restaurant() {}
