@@ -3,10 +3,12 @@ package com.epicodus.myrestaurants.ui;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.epicodus.myrestaurants.R;
 import com.epicodus.myrestaurants.adapters.RestaurantPagerAdapter;
 import com.epicodus.myrestaurants.models.Restaurant;
+import com.epicodus.myrestaurants.util.ItemTouchHelperViewHolder;
 
 import org.parceler.Parcels;
 
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class RestaurantDetailActivity extends AppCompatActivity {
+public class RestaurantDetailActivity extends AppCompatActivity implements ItemTouchHelperViewHolder {
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private RestaurantPagerAdapter adapterViewPager;
     ArrayList<Restaurant> mRestaurants = new ArrayList<>();
@@ -34,5 +36,16 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         adapterViewPager = new RestaurantPagerAdapter(getSupportFragmentManager(), mRestaurants);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
+    }
+
+
+    @Override
+    public void onItemSelected() {
+        Log.d("Animation", "onItemSelected");
+    }
+
+    @Override
+    public void onItemClear() {
+        Log.d("Animation", "onItemClear");
     }
 }
